@@ -100,7 +100,7 @@ nav ul li a:hover::after{
 }
 .tab-title{
 display: flex;
-    margin-top: 20px 0 40px;
+    margin: 20px 0 40px;
 }
 .tab-link{
     margin-right: 50px;
@@ -175,11 +175,13 @@ display: flex;
     overflow: hidden;
 }
 .project-col img{
-    transition: transform 0.4s ease, filter 0.4s ease;
+    transition: -webkit-transform 0.4s ease, transform 0.4s ease, filter 0.4s ease;
     display: block;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 .project-col:hover img{
+    -webkit-transform: scale(1.06);
     transform: scale(1.06);
     filter: brightness(0.85);
 }
@@ -199,11 +201,13 @@ display: flex;
     color: #fff;
     text-align: center;
     opacity: 0;
+    -webkit-transform: translateY(10px);
     transform: translateY(10px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition: opacity 0.35s ease, -webkit-transform 0.35s ease, transform 0.35s ease;
 }
 .project-col:hover .layer{
     opacity: 1;
+    -webkit-transform: translateY(0);
     transform: translateY(0);
 }
 
@@ -256,6 +260,7 @@ display: flex;
 }
 .social-icons a:hover{
     background-color: #ff0059;
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 /*right part of contact section */
@@ -290,3 +295,191 @@ display: flex;
     background-color: #ff0059;
 }
 
+/* --------- MOBILE & TABLET RESPONSIVE DESIGN --------- */
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    #header {
+        height: 500px;
+        padding-top: 20px;
+    }
+    
+    .container {
+        padding: 10px 8%;
+    }
+    
+    .header-text {
+        font-size: 20px;
+        margin-top: 15%;
+    }
+    
+    .header-text h1 {
+        font-size: 32px;
+        margin-top: 15px;
+    }
+    
+    nav ul li {
+        margin: 8px 15px;
+    }
+    
+    nav ul li a {
+        font-size: 16px;
+    }
+    
+    .logo {
+        width: 100px;
+    }
+    
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .subtittle {
+        font-size: 40px;
+    }
+    
+    .project-col {
+        flex-basis: 48%;
+        margin-right: 2%;
+    }
+    
+    .tab-link {
+        margin-right: 30px;
+        font-size: 16px;
+    }
+    
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+    
+    #about,
+    #projects,
+    #Contact {
+        padding: 50px 0;
+    }
+}
+
+/* Mobile (600px and below) */
+@media (max-width: 600px) {
+    #header {
+        height: 400px;
+        padding-top: 15px;
+    }
+    
+    .container {
+        padding: 10px 5%;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    nav ul li a {
+        font-size: 14px;
+    }
+    
+    .logo {
+        width: 80px;
+    }
+    
+    .header-text {
+        font-size: 16px;
+        margin-top: 20%;
+    }
+    
+    .header-text h1 {
+        font-size: 24px;
+        margin-top: 10px;
+        line-height: 1.3;
+    }
+    
+    .subtittle {
+        font-size: 28px;
+    }
+    
+    .about-col-1 img {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .tab-title {
+        flex-wrap: wrap;
+        margin: 15px 0 25px;
+    }
+    
+    .tab-link {
+        margin-right: 15px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .project-col {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+    
+    .project-col h3 {
+        font-size: 18px;
+    }
+    
+    .project-col p {
+        font-size: 14px;
+    }
+    
+    .contact-left p {
+        font-size: 14px;
+    }
+    
+    .social-icons {
+        gap: 15px;
+    }
+    
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .contact-right input,
+    .contact-right textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .contact-right button {
+        width: 120px;
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    #about,
+    #projects,
+    #Contact {
+        padding: 30px 0;
+    }
+    
+    .project-col .layer h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    
+    .project-col .layer p {
+        font-size: 12px;
+    }
+}
